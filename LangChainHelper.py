@@ -2,11 +2,10 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
-from secret_key import OPENAI_API_KEY
 
 import os
-# Set the API key in the environment
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 llm = OpenAI()
 def generate_app_name_and_slogan(app_type):
